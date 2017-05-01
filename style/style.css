@@ -7,3 +7,14 @@
 	width: 50px;
 	height: auto;
 }
+
+.bookDetail--container {
+	border: 1px solid #ddd;
+	border-radius: .25rem;
+	margin-left: 10px;
+}
+
+.bookDetail--cover {
+	text-align: center;
+	margin-bottom: 20px;
+}

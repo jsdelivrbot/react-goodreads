@@ -7,10 +7,10 @@ class BookDetail extends Component {
 			return <div>Select a book to get started.</div>
 		}
 		return (
-			<div className="bookDetail--container">
+			<div className="col-sm-6 bookDetail--container">
 				<h3>Details for: </h3>
 				<h4>{this.props.book.title}</h4>
-				<img src={this.props.book.imageUrl} />
+				<div className="bookDetail--cover"><img src={this.props.book.imageUrl} /></div>
 				<div>Author: {this.props.book.author}</div>
 				<div>Published: {this.props.book.published}</div>
 				<div>Pages: {this.props.book.pages}</div>

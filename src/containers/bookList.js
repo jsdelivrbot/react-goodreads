@@ -1,14 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { selectBook } from '../actions';
+import { bindActionCreators } from 'redux';
 
 class BookList extends Component {
 	renderList() {
 		return this.props.books.map((book) => {
 			return (
 				<li 
+					className="list-group-item"
 					key={book.goodreadsId}
-					classname="list-group-item">
-					{book.title} ({book.published})
+					onClick={() => this.props.selectBook(book)}
+					>
+					<img src={book.imageUrl} className="img-thumbnail bookList--cover" />
+					<span className="bookList--title">{book.title}</span>
 				</li>
 			);
 		});
@@ -29,4 +34,9 @@ function mapStateToProps(state) {
 	};
 }
 
-export default connect(mapStateToProps)(BookList);
+function mapDispatchToProps(dispatch) {
+	return bindActionCreators({ selectBook: selectBook }, dispatch);
+}
+
+// promote bookList
+export default connect(mapStateToProps, mapDispatchToProps)(BookList);

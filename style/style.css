@@ -1,0 +1,9 @@
+.bookList--title {
+	font-size: .75em;
+	margin-left: 10px;
+}
+
+.bookList--cover {
+	width: 50px;
+	height: auto;
+}
